@@ -1,20 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useState} from 'react';
+import { StyleSheet, Text, View, StatusBar, } from 'react-native';
+import { NineCubesLoader, TextLoader } from 'react-native-indicator';
+import Login from './components/Login'
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+
+  const [loading, setLoading] = useState(true)
+
+  setTimeout( () => setLoading(false), 3000);
+
+  if(loading) {
+    return (
+      <View style={styles.container}>
+        <NineCubesLoader size={30} color='#ddd' />
+      </View>
+    );
+  }
+  else {
+    return (
+      <>
+        <View style={styles.container}>
+            <Login />
+        </View>
+      </>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'tomato',
+    marginTop: StatusBar.currentHeight,
     alignItems: 'center',
     justifyContent: 'center',
   },
