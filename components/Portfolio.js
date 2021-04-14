@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView } from 'react-native';
 import { Chip, TouchableRipple } from 'react-native-paper';
 import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
+import BinanceList from '../components/BinanceList'
 
-const Portfolio = ({ onLoginClick }) => {
+const Portfolio = () => {
 
   return (
     <>
@@ -42,6 +43,9 @@ const Portfolio = ({ onLoginClick }) => {
                     </Chip>
                 </TouchableRipple>
             </View>
+        </ScrollView>
+        <ScrollView contentContainerStyle={styles.container}>
+            <BinanceList />
         </ScrollView>
     </>
   );
