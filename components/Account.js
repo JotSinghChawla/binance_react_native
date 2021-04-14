@@ -4,14 +4,14 @@ import { Chip, TouchableRipple } from 'react-native-paper';
 import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
 import BinanceList from '../components/BinanceList'
 
-const Portfolio = () => {
+const Account = () => {
 
   return (
     <>
         <View style={ styles.topContainer }>
             {/* <View style={styles.topBar}> */}
-                <Image source={ require('../assets/portfolio.png') } style={styles.image} />
-                <Text style={styles.text}> Create Your Portfolio! </Text>
+                <Image source={ require('../assets/account.png') } style={styles.image} />
+                <Text style={styles.text}> User Account! </Text>
             {/* </View> */}
         </View>
     </>
@@ -37,8 +37,9 @@ const styles = StyleSheet.create({
         fontSize: 30,
         marginTop: 40,
         marginLeft: -20,
+        textAlign: 'center',
         fontFamily: 'monospace'
     }
 });
 
-export default Portfolio;
+export default Account;

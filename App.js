@@ -8,41 +8,12 @@ import { Provider as PaperProvider, Chip } from 'react-native-paper';
 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Login from './components/Login'
-import HomeScreen from './components/Main'
+import HomeScreen from './components/HomeScreen'
 import Portfolio from './components/Portfolio'
+import Analytics from './components/Analytics'
+import Account from './components/Account'
 
 
-function Feed() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Feed!</Text>
-    </View>
-  );
-}
-
-function Profile() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Profile!</Text>
-    </View>
-  );
-}
-
-function Notifications() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Notifications!</Text>
-    </View>
-  );
-}
-
-// function Portfolio() {
-//   return (
-//     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-//       <Text>Portfolio!</Text>
-//     </View>
-//   );
-// }
 
 const Tab = createBottomTabNavigator();
 
@@ -56,7 +27,7 @@ function MyTabs() {
     >
       <Tab.Screen
         name="Home"
-        component={Feed}
+        component={HomeScreen}
         options={{
           tabBarLabel: '',
           tabBarIcon: ({ color, size }) => (
@@ -65,8 +36,8 @@ function MyTabs() {
         }}
       />
       <Tab.Screen
-        name="Notifications"
-        component={Notifications}
+        name="Analytics"
+        component={Analytics}
         options={{
           tabBarLabel: '',
           tabBarIcon: ({ color, size }) => (
@@ -86,7 +57,7 @@ function MyTabs() {
     />
       <Tab.Screen
         name="Profile"
-        component={Profile}
+        component={Account}
         options={{
           tabBarLabel: '',
           tabBarIcon: ({ color, size }) => (
@@ -103,7 +74,7 @@ export default function App() {
   const [loading, setLoading] = useState(true)
   const [isLoggedin, setIsLoggedin] = useState(false)
 
-  setTimeout( () => setLoading(false), 2000);
+  setTimeout( () => setLoading(false), 200);
 
   if(loading) {
     return (

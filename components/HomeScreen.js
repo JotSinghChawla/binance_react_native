@@ -8,7 +8,7 @@ const HomeScreen = () => {
 
   return (
     <>
-        <View style={ styles.container }>
+        <View style={ styles.topContainer }>
             <View style={styles.topBar}>
                 <Text style={styles.sizeone}> CryptoAssets </Text>
                 <Text style={styles.size}> Exchanges </Text>
@@ -17,7 +17,7 @@ const HomeScreen = () => {
             </View>
         </View>
 
-        <ScrollView horizontal={true} contentContainerStyle={styles.container} >
+        <ScrollView horizontal={true} contentContainerStyle={styles.chipContainer} >
             <View style={styles.row}>
                 <TouchableRipple onPress={ () => {}} rippleColor="steelblue">
                     <Chip icon='star-outline' style={{ margin: 4, borderRadius: 100, width: 35, fontWeight: 900}}> </Chip>
@@ -44,8 +44,8 @@ const HomeScreen = () => {
                 </TouchableRipple>
             </View>
         </ScrollView>
-        <ScrollView contentContainerStyle={styles.container}>
-            <BinanceList />
+        <ScrollView >
+            <BinanceList max={5} />
         </ScrollView>
     </>
   );
@@ -53,13 +53,20 @@ const HomeScreen = () => {
 
 const styles = StyleSheet.create({
 
-    container: {
+    topContainer: {
         marginTop: 40,
-        backgroundColor: 'cyan',
+    }, 
+    chipContainer: {
+        height: 65,
+        padding: 7,
+        paddingLeft: 3
     },
+    container: {
+        marginTop: 0
+    },  
     topBar: {
         fontSize: 30,
-        backgroundColor: 'yellow',
+        backgroundColor: '#ddd',
         flexDirection: 'row',
         flexWrap: 'wrap',
         paddingHorizontal: 11,
@@ -80,11 +87,11 @@ const styles = StyleSheet.create({
         paddingHorizontal: 9,
     },
     chip: {
-        // backgroundColor: "#2096F3",
         margin: 4
     },
     chipText: {
-        color: "black"
+        color: "black",
+        fontWeight: 'bold'
     }
 });
 
