@@ -4,11 +4,11 @@ import { Chip, TouchableRipple } from 'react-native-paper';
 import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
 import BinanceList from '../components/BinanceList'
 
-const Portfolio = () => {
+const HomeScreen = () => {
 
   return (
     <>
-        <View style={ styles.topContainer }>
+        <View style={ styles.container }>
             <View style={styles.topBar}>
                 <Text style={styles.sizeone}> CryptoAssets </Text>
                 <Text style={styles.size}> Exchanges </Text>
@@ -17,7 +17,7 @@ const Portfolio = () => {
             </View>
         </View>
 
-        <ScrollView horizontal={true} contentContainerStyle={styles.chipContainer} >
+        <ScrollView horizontal={true} contentContainerStyle={styles.container} >
             <View style={styles.row}>
                 <TouchableRipple onPress={ () => {}} rippleColor="steelblue">
                     <Chip icon='star-outline' style={{ margin: 4, borderRadius: 100, width: 35, fontWeight: 900}}> </Chip>
@@ -53,17 +53,13 @@ const Portfolio = () => {
 
 const styles = StyleSheet.create({
 
-    topContainer: {
+    container: {
         marginTop: 40,
-    }, 
-    chipContainer: {
-        height: 65,
-        padding: 7,
-        paddingLeft: 3
+        backgroundColor: 'cyan',
     },
     topBar: {
         fontSize: 30,
-        backgroundColor: '#ddd',
+        backgroundColor: 'yellow',
         flexDirection: 'row',
         flexWrap: 'wrap',
         paddingHorizontal: 11,
@@ -84,12 +80,12 @@ const styles = StyleSheet.create({
         paddingHorizontal: 9,
     },
     chip: {
+        // backgroundColor: "#2096F3",
         margin: 4
     },
     chipText: {
-        color: "black",
-        fontWeight: 'bold'
+        color: "black"
     }
 });
 
-export default Portfolio;
+export default HomeScreen;
